@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.body {
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    margin-top: -60px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .toggle-button {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links ul li {
+        text-align: center;
+    }
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: black;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.left-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: black;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    list-style-type: none;
+}
+
+.right li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 20px;
+}
+
+ul li a:hover {
+    color: #ff7200;
+}
+
+
+/* .general-wrapper {
+    vertical-align: bottom;
+  } */
+
+.home-wrapper {
+    height: 100vh;
+    width: 100%;
+    background: url(tiger.jpg);
+    background-position: center;
+    object-fit: cover;
+    position: fixed;
+    background-size: cover;
+    top: 60px;
+    left: 0px;
+    z-index: -100;
+}
+
+.Gallery {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.section {
+    transform: translateX(80px);
+    margin-bottom: 50px;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+}
+
+.section h1 {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.section h3 {
+    font-size: 25px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container>div {
+    color: white;
+    margin: 10px 2px;
+    /*text-align: center;*/
+    line-height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    height: 50px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.airtime {
+    background-color: rgb(115, 119, 119);
+    cursor: pointer;
+    width: 100px;
+}
+
+.electricity {
+    background-color: rgb(15, 238, 201);
+    cursor: pointer;
+    width: 100px;
+}
+
+.cable {
+    background-color: dodgerblue;
+    cursor: pointer;
+    width: 100px;
+}
+
+.payment {
+    background-color: rgb(42, 62, 116);
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.button {
+    background-color: purple;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    padding: 10px 28px;
+    color: white;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.bg-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contents {
+    height: 500px;
+    width: 700px;
+    margin-top: 25px;
+    background-color: white;
+    text-align: left;
+    padding: 50px;
+    position: relative;
+    border-radius: 4px;
+    font-size: 21px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: purple;
+    color: white;
+    padding: 14px 20px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+
+/* input[type=submit]:hover {
+      background-color: #45a049;
+  } */
+
+.close {
+    height: 35px;
+    width: 17px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.pos {
+    margin-left: 0px;
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.conts {
+    height: 650px;
+    width: 750px;
+    background-color: white;
+    text-align: left;
+    padding: 25px;
+    position: relative;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+    object-fit: contain;
+    text-align: left;
+    margin-bottom: -200px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.fee {
+    margin-top: 0px;
+    margin-bottom: -15px;
+    font-size: 12px;
+}
+
+.quit {
+    height: 35px;
+    width: 17px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.mod {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont {
+    height: 600px;
+    width: 700px;
+    background-color: white;
+    text-align: left;
+    padding: 30px;
+    position: relative;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.stop {
+    height: 35px;
+    width: 17px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.modarl {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modarl-cont {
+    height: 400px;
+    width: 600px;
+    background-color: white;
+    text-align: left;
+    padding: 50px;
+    position: relative;
+    border-radius: 4px;
+    opacity: 0.9;
+}
+
+.off {
+    height: 35px;
+    width: 17px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    font-size: 30px;
+    color: red;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.flex-container2 {
+    background-color: white;
+    width: 100%;
+    height: 800px;
+    background-image: url("creditorcash.png");
+    /* background-image: no-repeat; */
+    opacity: 0.5;
+}
+
+.h-flex {
+    font-size: 40px;
+    text-align: center;
+    color: rgb(7, 31, 104);
+    padding: 100px;
+    font-weight: bold;
+}
+
+.k-flex {
+    text-align: center;
+    margin-top: -80px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.column2 {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    height: 300px;
+    object-fit: contain;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+}
+
+
+/*h3 {
+  
+    }*/
+
+.tidy {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(8, 35, 110);
+}
+
+.row2 {
+    padding: 80px;
+    margin: -40px;
+    justify-content: center;
+}
+
+.column2:hover {
+    transform: scale(0.99, 0.99);
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* responsive view */
+
+
+/* @media screen and (max-width: 600px) {
+    .column12 {
+      width: 100%;
+    }
+  } */
+
+@media screen and (max-width: 680px) {
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .payment {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .airtime,
+    .electricity,
+    .cable {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        border-left: 0px;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .top1 {
+        display: flex;
+        flex-direction: column;
+        font-size: 5px;
+        margin-left: 0px;
+        width: 50%;
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .top2 {
+        display: flex;
+        flex-direction: column;
+        font-size: 5px;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 752px) {
+    .right-nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        left: 15px;
+        width: 40px;
+        height: 16px px;
+        padding: 0;
+        overflow-x: scroll;
+    }
+}
+
+.flex-container3 {
+    width: 100%;
+    height: 800px;
+    position: relative;
+}
+
+.about {
+    font-size: 35px;
+    width: 150px;
+    margin: 0 auto;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(175, 126, 108);
+    text-align: center;
+}
+
+.row1 {
+    display: flex;
+    padding: 80px;
+    margin: -40px;
+    width: 100%;
+    height: 100%;
+}
+
+.column11 {
+    margin: -20px;
+    width: 50%;
+}
+
+.column12 {
+    font-size: 20px;
+    margin-left: 35px;
+    line-height: 1.5;
+    opacity: 0.7;
+    width: 50%;
+}
+
+.borrow {
+    font-size: 25px;
+    color: rgb(206, 29, 59);
+}
+
+.ours {
+    font-size: 35px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(175, 126, 108);
+    width: 200px;
+    margin: 0 auto;
+    color: white;
+    /* position: center;  */
+    text-align: center;
+}
+
+.column3 {
+    background-color: rgb(241, 235, 235);
+    width: 100%;
+    height: 350;
+    padding: 50px;
+    margin: 10px;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.row3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1045px) {
+    .row3 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.flex-container4 {
+    background: url("mum.jpg");
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+}
+
+*/ .subj {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0.9;
+    margin-top: -25px;
+}
+
+.obj {
+    margin-top: 50px;
+    font-size: 22px;
+    line-height: 0.9;
+}
+
+.arrange {
+    font-size: 20px;
+}
+
+.Big-mission {
+    background-color: white;
+    width: 100%;
+    /* height: 50px; */
+}
+
+.Mission {
+    margin-left: 100px;
+    border-top: 50px;
+}
+
+.Our {
+    text-align: center;
+    font-size: 35px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(175, 126, 108);
+    width: 200px;
+    margin: 0 auto;
+    color: rgb(21, 21, 156);
+    margin-top: 80px;
+}
+
+.Oursss {
+    text-align: center;
+    font-size: 30px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(175, 126, 108);
+    margin: 0 auto;
+    color: rgb(21, 21, 156);
+    width: 10;
+    position: relative;
+    margin: 100px;
+}
+
+.arrange2 {
+    margin-bottom: 70px;
+}
+
+.footer {
+    background-color: rgb(22, 21, 21);
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+.collapsible {
+    background-color: white;
+    color: red;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border: 1px solid grey;
+}
+
+.active,
+.collapsible:hover {
+    background-color: white;
+}
+
+.collapsible:after {
+    content: "\002B";
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
